@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background-image {
+  background-image: url("/public/banner.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
