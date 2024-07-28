@@ -16,3 +16,5 @@ If you want to be a admin, you have tell me then i can add you as admin, then yo
 
 You can also book train, then you can search your booking details, by entering your Booking id
 
+For booking and finding booking details you have to login , go to top-tight corner menu, click on it , click on user to login or signup. After sucessfully login, you will be able to do this function
+
