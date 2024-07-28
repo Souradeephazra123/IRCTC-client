@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginComponent = ({ onclick }) => {
   const [username, setUsername] = useState("");
@@ -30,7 +32,7 @@ const LoginComponent = ({ onclick }) => {
       if (response.status !== 200) {
         throw new Error("Response is not correct");
       }
-      console.log(response.data);
+      alert("Signup Successfull");
     } catch (error) {
       console.log(error);
     }
@@ -54,7 +56,9 @@ const LoginComponent = ({ onclick }) => {
       if (response.status !== 200) {
         throw new Error("Response is not correct");
       }
-      console.log(response.data);
+      alert("Login Successfull");
+      toast.success("Login Successfull");
+
       if (
         response.data?.status === "Login successful" &&
         response.data?.access_token
@@ -86,7 +90,6 @@ const LoginComponent = ({ onclick }) => {
     setPassword("");
   };
   return (
-    // <div className="  w-full h-screen bg-opacity-15">
     <div className="relative z-50 bg-gray-200  flex  justify-center items-center ">
       <div className=" px-10 py-8 flex flex-col gap-3 border">
         {isLogin ? (
@@ -177,8 +180,8 @@ const LoginComponent = ({ onclick }) => {
         className=" absolute top-2 right-2"
         onClick={onclick}
       />
+      <ToastContainer />
     </div>
-    // </div>
   );
 };
 
