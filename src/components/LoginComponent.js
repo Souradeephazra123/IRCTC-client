@@ -55,6 +55,13 @@ const LoginComponent = ({ onclick }) => {
         throw new Error("Response is not correct");
       }
       console.log(response.data);
+      if (
+        response.data?.status === "Login successful" &&
+        response.data?.access_token
+      ) {
+        localStorage.setItem("access_token", response.data?.access_token);
+        localStorage.setItem("user_id", response.data?.user_id);
+      }
       //   const trainData = response.data;
       //   navigate("/bookings/trainlist", {
       //     state: { trainData, fromStation, toStation },
@@ -79,8 +86,9 @@ const LoginComponent = ({ onclick }) => {
     setPassword("");
   };
   return (
-    <div className="relative z-50 bg-gray-200 w-full h-auto flex  justify-center items-center">
-      <div className=" px-10 py-8 flex flex-col gap-3">
+    // <div className="  w-full h-screen bg-opacity-15">
+    <div className="relative z-50 bg-gray-200  flex  justify-center items-center ">
+      <div className=" px-10 py-8 flex flex-col gap-3 border">
         {isLogin ? (
           <>
             <p className=" underline-offset-1 text-primary text-2xl capitalize font-medium">
@@ -170,6 +178,7 @@ const LoginComponent = ({ onclick }) => {
         onClick={onclick}
       />
     </div>
+    // </div>
   );
 };
 
