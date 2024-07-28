@@ -58,6 +58,7 @@ const GetTrain = () => {
           <div className=" relative">
             <input
               type="text"
+              autoComplete="on"
               placeholder="from"
               onChange={(e) => setFromstation(e.target.value)}
               value={fromStation}
@@ -71,6 +72,7 @@ const GetTrain = () => {
           <div className=" relative">
             <input
               type="text"
+              autoComplete="on"
               placeholder="to"
               onChange={(e) => setTostation(e.target.value)}
               value={toStation}
@@ -92,13 +94,7 @@ const GetTrain = () => {
           {/* </Link> */}
         </form>
 
-        {/* {data.map((train) => (
-          <div key={train.train_id}>
-            <p>id:- {train.train_id}</p>
-            <p>Name:- {train.train_name}</p>
-            <p>Available seats:- {train.available_seats}</p>
-          </div>
-        ))} */}
+      
       </div>
     </div>
   );

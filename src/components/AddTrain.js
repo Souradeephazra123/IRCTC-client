@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 const AddTrain = () => {
   const initialState = {
@@ -56,7 +58,9 @@ const AddTrain = () => {
         throw new Error("Response is not correct");
       }
 
-      console.log(response.data);
+      toast.success("Sucessfully added a new train", {
+        position: "top-right",
+      });
     } catch (error) {
       console.log(error);
     }
@@ -79,7 +83,6 @@ const AddTrain = () => {
               placeholder="Train name"
               name="train_name"
               autoComplete="on"
-              // onChange={(e) => setInput.train_name(e.target.value)}
               onChange={handleChange}
               value={input.train_name}
               className="  border-[0.5px] text-base 2xl:text-xl rounded text-primary border-primary pl-8 py-2 2xl:py-2.5 text-left bg-transparent "
@@ -89,7 +92,6 @@ const AddTrain = () => {
               placeholder="source"
               name="source"
               autoComplete="on"
-              // onChange={(e) => setInput.source(e.target.value)}
               onChange={handleChange}
               value={input.source}
               className="  border-[0.5px] text-base 2xl:text-xl rounded text-primary border-primary pl-8 py-2 2xl:py-2.5 text-left bg-transparent "
@@ -101,7 +103,6 @@ const AddTrain = () => {
               placeholder="destination"
               name="destination"
               autoComplete="on"
-              // onChange={(e) => setInput.destination(e.target.value)}
               onChange={handleChange}
               value={input.destination}
               className="  border-[0.5px] text-base 2xl:text-xl rounded text-primary border-primary pl-8 py-2 2xl:py-2.5 text-left bg-transparent "
@@ -151,6 +152,7 @@ const AddTrain = () => {
           </button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -42,7 +42,7 @@ const GetBookingDetails = () => {
   return (
     <div className=" background-image h-[100vh]  flex items-center px-12">
       <div className=" bg-white p-6 border flex flex-col gap-5">
-        <p className=" text-3xl text-primary  font-bold">BOOK TICKET</p>
+        <p className=" text-3xl text-primary  font-bold">Search your Booking details</p>
 
         <form onSubmit={handleSubmit} className=" flex flex-col gap-5 ">
           <div>

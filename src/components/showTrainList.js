@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { TiArrowRightThick } from "react-icons/ti";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const ShowTrainList = () => {
   const [isopen, setIsOpen] = useState(false);
@@ -38,7 +39,9 @@ const ShowTrainList = () => {
         }
       );
       setBookedTrainList(response.data);
-      // console.log(response.data);
+      toast.success("Sucessfully booked ticket",{
+        position:"top-right"
+      });
     } catch (error) {
       console.log(error);
     }
@@ -53,6 +56,9 @@ const ShowTrainList = () => {
   };
 
   const handleSubmit = async (e) => {
+    if (!token) {
+      alert("Please login or signup at first");
+    }
     e.preventDefault();
     await bookTicket(selectedTrainId);
     setIsOpen(false);
@@ -64,7 +70,6 @@ const ShowTrainList = () => {
 
   return (
     <div className="relative w-full min-h-screen">
-      <h1>Train List</h1>
       <p className=" whitespace-nowrap flex gap-2 items-center">
         {trainData?.length} Results for
         <span className=" text-lg font-bold capitalize"> {fromStation}</span>
@@ -137,6 +142,7 @@ const ShowTrainList = () => {
           </form>
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 };
