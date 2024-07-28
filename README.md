@@ -7,6 +7,12 @@ Remember i have added only this stations:
 From Howrah To Chennai
 From Howrah To Delhi
 
+So you can book these route only fo now
+
 
 You can add new train also, but remember only admin can add train
 If you want to be a admin, you have tell me then i can add you as admin, then you will be able to add train(now i am the only admin)
+
+
+You can also book train, then you can search your booking details, by entering your Booking id
+
